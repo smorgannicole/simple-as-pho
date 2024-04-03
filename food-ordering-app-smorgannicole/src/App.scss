@@ -160,6 +160,24 @@ body {
   left: 0;
 }
 
+.num-cart-items {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  position: fixed;
+  top: 3%;
+  right: 4.5%;
+  z-index: 1;
+  color: #121832;
+  background-color: #F9C3BE;
+  width: 1rem;
+  height: 1rem;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
 // modal
 
 .ReactModal__Content--after-open {

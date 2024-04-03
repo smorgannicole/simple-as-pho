@@ -21,6 +21,7 @@ const App = () => {
   const [orderAdd, setOrderAdd] = useState([])
   const [total, setTotal] = useState('0.00')
   const [cartOpen, setCartOpen] = useState(false)
+  const [numCartItems, setNumCartItems] = useState(0)
   const cartRef = useRef(null)
 
   ReactModal.setAppElement('#root')
@@ -38,6 +39,7 @@ const App = () => {
       calcTotal(newOrderAdd)
       return newOrderAdd
     })
+    setNumCartItems(numCartItems + 1)
   }
   
   const calcTotal = (updatedOrderAdd) => {
@@ -61,6 +63,9 @@ const App = () => {
         ...orderAdd.slice(index + 1)
       ]
       setOrderAdd(newOrderAdd)
+    }
+    if (numCartItems > 0) {
+      setNumCartItems(numCartItems - 1)
     }
   }
 
@@ -94,6 +99,7 @@ const App = () => {
     <>
       <div className='page-wrapper'>
         <button className="cart-toggle" onClick={toggleCart}>
+          <div className={numCartItems > 0 ? 'num-cart-items' : ''}>{numCartItems > 0 ? numCartItems : ''}</div>
           <FontAwesomeIcon className='cart-icon' icon={faShoppingCart} size="sm" />
         </button>
         <div ref={cartRef} className={`sidebar ${cartOpen ? 'open' : ''}`}>

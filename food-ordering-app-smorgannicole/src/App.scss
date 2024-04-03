@@ -97,8 +97,10 @@ body {
   }
   .food-img {
     position: relative;
-    height: 290px;
-    width: 240px;
+    // height: 290px;
+    // width: 240px;
+    height: 40vh;
+    width: 17vw;
     transition: opacity 0.3s ease;
   }
   .more-hovered {

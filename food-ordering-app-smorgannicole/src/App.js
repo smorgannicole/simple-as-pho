@@ -22,6 +22,8 @@ const App = () => {
   const [total, setTotal] = useState('0.00')
   const [cartOpen, setCartOpen] = useState(false)
   const [numCartItems, setNumCartItems] = useState(0)
+  const [showAddedToCart, setShowAddedToCart] = useState(false)
+  const [addedItem, setAddedItem] = useState("")
   const cartRef = useRef(null)
 
   ReactModal.setAppElement('#root')
@@ -40,6 +42,11 @@ const App = () => {
       return newOrderAdd
     })
     setNumCartItems(numCartItems + 1)
+    setShowAddedToCart(true)
+    setAddedItem(plateObj.item)
+    setTimeout(() => {
+      setShowAddedToCart(false)
+    }, 1800)
   }
   
   const calcTotal = (updatedOrderAdd) => {
@@ -98,6 +105,9 @@ const App = () => {
   return (
     <>
       <div className='page-wrapper'>
+        <div className="added-to-cart-banner" style={{ display: showAddedToCart ? 'block' : 'none' }}>
+        {addedItem} added to cart
+        </div>
         <button className="cart-toggle" onClick={toggleCart}>
           <div className={numCartItems > 0 ? 'num-cart-items' : ''}>{numCartItems > 0 ? numCartItems : ''}</div>
           <FontAwesomeIcon className='cart-icon' icon={faShoppingCart} size="sm" />

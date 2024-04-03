@@ -33,18 +33,22 @@ body {
   .left-col {
     width: 39%;
     margin-right: 11%;
+    margin-top: 3rem;
   }
   .right-col {
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    margin-top: 3rem;
   }
 }
 
 .title {
   font-family: "Kaushan Script", cursive;
-  font-size: 80px;
+  // font-size: 60pt;
+  font-size: 5vw;
   margin: 40px 0;
 }
 
@@ -64,11 +68,13 @@ body {
   margin-top: 40px;
   color: #fff;
   line-height: 2;
+  font-size: 1.2vw;
 }
 
 .socials {
   display: flex;
   gap:20px;
+  font-size: 1.2vw;
 }
 
 /* menu */
@@ -154,6 +160,12 @@ body {
     border: none;
     background-color: transparent;
   }
+  .cart-title {
+    font-size: 1.5rem;
+  }
+  .total {
+    font-size: 1.02rem;
+  }
 }
 
 .sidebar.open {
@@ -235,6 +247,7 @@ body {
   .food-on-order {
     text-align: end;
     margin-bottom: 10px;
+    font-size: 1.03rem;
   }
 }
 
@@ -244,6 +257,7 @@ footer {
   position: fixed;
   right: 1%;
   bottom: 1%;
+  font-size: 1vw;
   .footer-anchor {
     text-decoration: none;
     color: #A9A9A9;

@@ -114,11 +114,11 @@ const App = () => {
         </button>
         <div ref={cartRef} className={`sidebar ${cartOpen ? 'open' : ''}`}>
           <button className="close-cart" style={{ cursor: 'pointer' }} onClick={() => setCartOpen(false)}>X</button>
-          <h2 className='mb-1'>Shopping Cart</h2>
+          <h2 className='mb-1 cart-title'>Shopping Cart</h2>
           {orderAdd.map((foodObj, index) => {
             return <Order foodObj={foodObj} key={index} index={index} calcTotal={calcTotal} handleDelete={handleDelete} />
           })}
-          <p style={{ fontWeight: 600 }}>Total: ${total}</p>
+          <p className='total' style={{ fontWeight: 600 }}>Total: ${total}</p>
         </div>
         <div className='row'>
           <div className="left-col">

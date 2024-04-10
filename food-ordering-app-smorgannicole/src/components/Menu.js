@@ -47,13 +47,16 @@ const Menu = ({ plate, handleOrderAdd, index }) => {
         </img>
         <div className={`${isHovered ? 'cart-add-icon' : 'hide-info'}`}>
           <FontAwesomeIcon 
-          style={{ cursor: 'pointer', transition: 'color 0.2s ease',
-          color: addHovered ? '#121832' : '#fff' }} 
-          onMouseEnter={() => setAddHovered(true)}
-          onMouseLeave={() => setAddHovered(false)}
-          onClick={() => handleOrderAdd(index, item, price)} 
-          icon={faCartPlus} 
-          size="xl" />
+          style={{ 
+            cursor: 'pointer', 
+            transition: 'color 0.2s ease',
+            color: addHovered ? '#121832' : '#fff',
+            fontSize: '1.5vw' }} 
+            onMouseEnter={() => setAddHovered(true)}
+            onMouseLeave={() => setAddHovered(false)}
+            onClick={() => handleOrderAdd(index, item, price)} 
+            icon={faCartPlus} 
+            size="xl" />
         </div>
       </div>
       <Modal
